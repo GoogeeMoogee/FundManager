@@ -7,6 +7,7 @@ namespace FundManager.Desktop
         public MainForm()
         {
             InitializeComponent();
+            this.HeaderPanel.Controls.Add(new NotAuthorizedControl());
         }
     }
 }
