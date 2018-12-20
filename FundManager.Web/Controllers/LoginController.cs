@@ -1,5 +1,6 @@
 ﻿using FundManager.Web.Models;
 using System.Web.Mvc;
+using FundManager.Core;
 
 namespace FundManager.Web.Controllers
 {
@@ -7,13 +8,15 @@ namespace FundManager.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var conn = ConfigurationManager.Vault["DBConnectionString"];
+
+            return new EmptyResult(); //View();
         }
 
         [HttpPost]
         public ActionResult Index(LoginModel loginModel)
         {
-            return View();
+            return new EmptyResult(); // View();
         }
     }
 }

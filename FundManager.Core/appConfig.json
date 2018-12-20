@@ -1,0 +1,3 @@
+{
+  "DBConnectionString": "workstation id=FundManagerDB.mssql.somee.com;packet size=4096;user id=ygusak_SQLLogin_1;pwd=yltvq7l1l6;data source=FundManagerDB.mssql.somee.com;persist security info=False;initial catalog=FundManagerDB"
+}
