@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManager.Web", "FundManager.Web\FundManager.Web.csproj", "{5E6551F8-B4DD-477A-A793-5D100D1AC231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManager.Core", "FundManager.Services\FundManager.Core.csproj", "{233ACB88-CF51-4032-BB5D-3AED59B5328C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManager.Core", "FundManager.Core\FundManager.Core.csproj", "{233ACB88-CF51-4032-BB5D-3AED59B5328C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManager.Desktop", "FundManager.Desktop\FundManager.Desktop.csproj", "{74C9D6DA-B3B2-47C8-9CC7-C72E50B7D830}"
 EndProject
