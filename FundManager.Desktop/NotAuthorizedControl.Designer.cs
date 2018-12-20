@@ -1,0 +1,90 @@
+﻿namespace FundManager.Desktop
+{
+    partial class NotAuthorizedControl
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.NotAuthorisedText = new System.Windows.Forms.Label();
+            this.SignInLink = new System.Windows.Forms.LinkLabel();
+            this.SignUpLink = new System.Windows.Forms.LinkLabel();
+            this.SuspendLayout();
+            // 
+            // NotAuthorisedText
+            // 
+            this.NotAuthorisedText.AutoSize = true;
+            this.NotAuthorisedText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotAuthorisedText.Location = new System.Drawing.Point(28, 11);
+            this.NotAuthorisedText.Name = "NotAuthorisedText";
+            this.NotAuthorisedText.Size = new System.Drawing.Size(289, 23);
+            this.NotAuthorisedText.TabIndex = 0;
+            this.NotAuthorisedText.Text = "Currently you are not authorised. ";
+            // 
+            // SignInLink
+            // 
+            this.SignInLink.AutoSize = true;
+            this.SignInLink.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignInLink.Location = new System.Drawing.Point(28, 46);
+            this.SignInLink.Name = "SignInLink";
+            this.SignInLink.Size = new System.Drawing.Size(63, 23);
+            this.SignInLink.TabIndex = 1;
+            this.SignInLink.TabStop = true;
+            this.SignInLink.Text = "SignIn";
+            this.SignInLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignInLink_LinkClicked);
+            // 
+            // SignUpLink
+            // 
+            this.SignUpLink.AutoSize = true;
+            this.SignUpLink.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpLink.Location = new System.Drawing.Point(28, 78);
+            this.SignUpLink.Name = "SignUpLink";
+            this.SignUpLink.Size = new System.Drawing.Size(72, 23);
+            this.SignUpLink.TabIndex = 2;
+            this.SignUpLink.TabStop = true;
+            this.SignUpLink.Text = "SignUp";
+            this.SignUpLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignUpLink_LinkClicked);
+            // 
+            // NotAuthorizedControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SignUpLink);
+            this.Controls.Add(this.SignInLink);
+            this.Controls.Add(this.NotAuthorisedText);
+            this.Name = "NotAuthorizedControl";
+            this.Size = new System.Drawing.Size(1182, 128);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label NotAuthorisedText;
+        private System.Windows.Forms.LinkLabel SignInLink;
+        private System.Windows.Forms.LinkLabel SignUpLink;
+    }
+}

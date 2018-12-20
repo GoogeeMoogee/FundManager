@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -44,10 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\EncryptionUtilities.cs" />
     <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="DataAccess\AuthenticationDataAccess.cs" />
+    <Compile Include="DataAccess\BaseDataAccess.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\QueryResult.cs" />
+    <Compile Include="Model\RegistrationModel.cs" />
+    <Compile Include="Model\UserDataModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
-    <Compile Include="Services\IAuthenticationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="appConfig.json">
