@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,12 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\EncryptionUtilities.cs" />
+    <Compile Include="Component\CacheHelper.cs" />
+    <Compile Include="Component\GlobalSession.cs" />
     <Compile Include="ConfigurationManager.cs" />
     <Compile Include="DataAccess\AuthenticationDataAccess.cs" />
     <Compile Include="DataAccess\BaseDataAccess.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\QueryResult.cs" />
     <Compile Include="Model\RegistrationModel.cs" />
+    <Compile Include="Model\ServiceResponse.cs" />
     <Compile Include="Model\UserDataModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

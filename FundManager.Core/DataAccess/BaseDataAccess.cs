@@ -9,7 +9,7 @@ namespace FundManager.Core.DataAccess
 
         public BaseDataAccess()
         {
-            _connectionString = ConfigurationManager.Vault["DBCOnnectionString"] as string;
+            _connectionString = ConfigurationManager.Vault["DBConnectionString"] as string;
         }
         public IDbConnection DbConnection => new SqlConnection(_connectionString);
     }

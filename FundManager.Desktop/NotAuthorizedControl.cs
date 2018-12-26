@@ -16,7 +16,9 @@ namespace FundManager.Desktop
 
         private void SignUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var registrationForm = new RegistrationForm();
+            registrationForm.OwnerForm = ParentForm as MainForm;
+            registrationForm.Show();
         }
     }
 }

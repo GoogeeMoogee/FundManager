@@ -6,7 +6,7 @@ using FundManager.Core.Component;
 
 namespace FundManager.Core.DataAccess
 {
-    public class AuthenticationDataAccess : BaseDataAccess
+    internal class AuthenticationDataAccess : BaseDataAccess
     {
         private const string RegisterQuery = @"INSERT INTO [FundManagerDB].[dbo].[User] (UserName, Email, PasswordHash, PasswordSalt) VALUES (@UserName, @Email, @PasswordHash, @PasswordSalt)";
 

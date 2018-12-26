@@ -1,42 +1,37 @@
-﻿using System;
-using System.Runtime.Caching;
+﻿using FundManager.Core.Model;
+using Newtonsoft.Json;
 
 namespace FundManager.Core.Component
 {
-    public class GlobalSession
+    public static class GlobalSession
     {
-        private const int DefaultExpiration = 5;
-        private static readonly Lazy<GlobalSession> _instance = new Lazy<GlobalSession>(() => new GlobalSession());
+        public const string DesktopSessionKey = "DesktopSessionKey";
 
-        private GlobalSession()
-        {}
-
-        public static GlobalSession Instance => _instance.Value;
-
-        /// <summary>
-        /// Gets object from the cache by the given key
-        /// </summary>
-        public object Get(string key)
+        public static void StartDesktopSession(UserModel user)
         {
-            return MemoryCache.Default.Get(key);
+            var session = CacheHelper.Instance;
+
+            if (!session.Contains(DesktopSessionKey)) return;
+
+            session.AddWithoutExpiration(DesktopSessionKey, JsonConvert.SerializeObject(user));
         }
 
-        /// <summary>
-        /// Adds if not present or replace the object in the cache by the given key, default expiration time is used
-        /// </summary>
-        public void Add(string key, object value)
+        public static void EndDesktopSession()
         {
-            var expirationInMinutes = ConfigurationManager.Vault.ContainsKey("SessionExpiration") ? (int)ConfigurationManager.Vault["SessionExpiration"] : DefaultExpiration;
+            var session = CacheHelper.Instance;
 
-            MemoryCache.Default.Set(key, value, DateTimeOffset.Now.AddMinutes(expirationInMinutes));
+            if (session.Contains(DesktopSessionKey))
+            {
+                session.Delete(DesktopSessionKey);
+            }
         }
 
-        /// <summary>
-        /// Removes object from the cache by the given key, returns deleted object or null if key is not found
-        /// </summary>
-        public object Delete(string key)
+        public static UserModel GetDesktopCurrentUser()
         {
-            return MemoryCache.Default.Remove(key);
+            var session = CacheHelper.Instance;
+            var strModel = session.Get(DesktopSessionKey) as string;
+            var userModel = JsonConvert.DeserializeObject<UserModel>(strModel);
+            return userModel;
         }
     }
 }
