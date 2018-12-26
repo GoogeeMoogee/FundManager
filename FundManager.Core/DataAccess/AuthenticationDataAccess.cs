@@ -8,11 +8,33 @@ namespace FundManager.Core.DataAccess
 {
     internal class AuthenticationDataAccess : BaseDataAccess
     {
+        private const string IfExist = @"IF EXISTS(SELECT TOP(1) * FROM [FundManagerDB].[dbo].[User] WHERE UserName = @UserName)
+                                            SELECT CAST(1 AS BIT) AS[IsAlreadyExist]
+                                        ELSE
+                                            SELECT CAST(0 AS BIT) AS[IsAlreadyExist]"; 
+
         private const string RegisterQuery = @"INSERT INTO [FundManagerDB].[dbo].[User] (UserName, Email, PasswordHash, PasswordSalt) VALUES (@UserName, @Email, @PasswordHash, @PasswordSalt)";
 
         private const string GetUserData =
-            @"SELECT UserName, Email, PasswordHash, PasswordSalt FROM [FundManagerDB].[dbo].[User]
+            @"SELECT Id, UserName, Email, PasswordHash, PasswordSalt FROM [FundManagerDB].[dbo].[User]
                                              WHERE UserName = @UserName";
+
+        public async Task<bool> IfUserAlreadyExist(string userName)
+        {
+            try
+            {
+                using (DbConnection)
+                {
+                    DbConnection.Open();
+
+                    return await DbConnection.QueryFirstAsync<bool>(IfExist, new {UserName = userName});
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public async Task<QueryResult> Register(RegistrationModel input)
         {
@@ -55,9 +77,9 @@ namespace FundManager.Core.DataAccess
         {
             try
             {
-                var result = await DbConnection.QueryFirstAsync<SecretDataModel>(GetUserData, input.UserName);
+                var result = await DbConnection.QueryFirstAsync<SecretDataModel>(GetUserData, new {input.UserName});
 
-                var isPasswordValid = EncryptionUtilities.IsPasswordValid(input.Password, $"{result.PasswordSalt}:{result.PasswordHash}");
+                var isPasswordValid = EncryptionUtilities.IsPasswordValid(input.Password, $"{result.PasswordSalt.Trim()}:{result.PasswordHash.Trim()}");
 
                 if (isPasswordValid)
                 {

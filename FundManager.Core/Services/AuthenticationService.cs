@@ -57,5 +57,10 @@ namespace FundManager.Core.Services
                 };
             }
         }
+
+        public async Task<bool> CheckIfExist(string userName)
+        {
+            return await _authenticationDataAccess.IfUserAlreadyExist(userName);
+        }
     }
 }

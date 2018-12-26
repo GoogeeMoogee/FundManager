@@ -11,6 +11,7 @@ namespace FundManager.Core.DataAccess
         {
             _connectionString = ConfigurationManager.Vault["DBConnectionString"] as string;
         }
+
         public IDbConnection DbConnection => new SqlConnection(_connectionString);
     }
 }

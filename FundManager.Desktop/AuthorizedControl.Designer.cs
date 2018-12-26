@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NotAuthorisedText = new System.Windows.Forms.Label();
+            this.AuthorizedText = new System.Windows.Forms.Label();
             this.LogOutLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // NotAuthorisedText
+            // AuthorizedText
             // 
-            this.NotAuthorisedText.AutoSize = true;
-            this.NotAuthorisedText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotAuthorisedText.Location = new System.Drawing.Point(28, 11);
-            this.NotAuthorisedText.Name = "NotAuthorisedText";
-            this.NotAuthorisedText.Size = new System.Drawing.Size(299, 23);
-            this.NotAuthorisedText.TabIndex = 0;
-            this.NotAuthorisedText.Text = "Currently, you are logged in as {0}";
+            this.AuthorizedText.AutoSize = true;
+            this.AuthorizedText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuthorizedText.Location = new System.Drawing.Point(28, 11);
+            this.AuthorizedText.Name = "AuthorizedText";
+            this.AuthorizedText.Size = new System.Drawing.Size(299, 23);
+            this.AuthorizedText.TabIndex = 0;
+            this.AuthorizedText.Text = "Currently, you are logged in as {0}";
             // 
             // LogOutLink
             // 
@@ -61,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LogOutLink);
-            this.Controls.Add(this.NotAuthorisedText);
+            this.Controls.Add(this.AuthorizedText);
             this.Name = "AuthorizedControl";
             this.Size = new System.Drawing.Size(1182, 128);
             this.ResumeLayout(false);
@@ -71,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label NotAuthorisedText;
+        private System.Windows.Forms.Label AuthorizedText;
         private System.Windows.Forms.LinkLabel LogOutLink;
     }
 }

@@ -6,7 +6,7 @@ namespace FundManager.Core.Component
     public class CacheHelper
     {
         private const int DefaultExpiration = 5;
-        private readonly int _expirationTime = ConfigurationManager.Vault.ContainsKey("SessionExpiration") ? (int)ConfigurationManager.Vault["SessionExpiration"] : DefaultExpiration;
+        private readonly int _expirationTime = DefaultExpiration;
         private static readonly Lazy<CacheHelper> _instance = new Lazy<CacheHelper>(() => new CacheHelper());
 
 

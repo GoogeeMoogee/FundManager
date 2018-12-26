@@ -11,7 +11,7 @@ namespace FundManager.Core.Component
         {
             var session = CacheHelper.Instance;
 
-            if (!session.Contains(DesktopSessionKey)) return;
+            if (session.Contains(DesktopSessionKey)) return;
 
             session.AddWithoutExpiration(DesktopSessionKey, JsonConvert.SerializeObject(user));
         }

@@ -41,6 +41,12 @@ namespace FundManager.Desktop
                     Password = password
                 };
 
+                if (await _authenticationService.CheckIfExist(userName))
+                {
+                    SetErrorMessage($"User '{userName}' is already exist");
+                    return;
+                }
+
                 var result = await _authenticationService.RegisterUser(registrationModel);
                 if (result.IsSuccessful)
                 {
@@ -55,23 +61,24 @@ namespace FundManager.Desktop
                     if (loginResult.IsSuccessful)
                     {
                         GlobalSession.StartDesktopSession(loginResult.Data);
+                        OwnerForm.ChangeHeader(true);
                         Close();
                     }
                     else
                     {
-                        ValidationErrorsLabel.Text += $@"-{loginResult.ErrorMessage}{Environment.NewLine}";
+                        SetErrorMessage(loginResult.ErrorMessage);
                     }
                 }
                 else
                 {
-                    ValidationErrorsLabel.Text += $@"-{result.ErrorMessage}{Environment.NewLine}";
+                    SetErrorMessage(result.ErrorMessage);
                 }
             }
             else
             {
                 foreach (var error in validationResult.ErrorMessages)
                 {
-                    ValidationErrorsLabel.Text += $@"-{error}{Environment.NewLine}";
+                    SetErrorMessage(error);
                 }
             }
         }
@@ -132,6 +139,11 @@ namespace FundManager.Desktop
             {
                 return false;
             }
+        }
+
+        private void SetErrorMessage(string errorMessage)
+        {
+            ValidationErrorsLabel.Text += $@" • {errorMessage}{Environment.NewLine}";
         }
     }
 }

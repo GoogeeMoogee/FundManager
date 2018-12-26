@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.InfoLabel = new System.Windows.Forms.Label();
-            this.ValidationErrorsLabel = new System.Windows.Forms.Label();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
@@ -39,6 +38,9 @@
             this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
             this.ConfirmPasswordTextBox = new System.Windows.Forms.TextBox();
             this.RegistrationButton = new System.Windows.Forms.Button();
+            this.ValidationPanel = new System.Windows.Forms.Panel();
+            this.ValidationErrorsLabel = new System.Windows.Forms.Label();
+            this.ValidationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // InfoLabel
@@ -50,15 +52,6 @@
             this.InfoLabel.Size = new System.Drawing.Size(217, 21);
             this.InfoLabel.TabIndex = 8;
             this.InfoLabel.Text = "Please fill registration form";
-            // 
-            // ValidationErrorsLabel
-            // 
-            this.ValidationErrorsLabel.AutoSize = true;
-            this.ValidationErrorsLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.ValidationErrorsLabel.Location = new System.Drawing.Point(41, 253);
-            this.ValidationErrorsLabel.Name = "ValidationErrorsLabel";
-            this.ValidationErrorsLabel.Size = new System.Drawing.Size(0, 13);
-            this.ValidationErrorsLabel.TabIndex = 10;
             // 
             // UserNameTextBox
             // 
@@ -140,12 +133,31 @@
             this.RegistrationButton.UseVisualStyleBackColor = true;
             this.RegistrationButton.Click += new System.EventHandler(this.RegistrationButton_Click);
             // 
+            // ValidationPanel
+            // 
+            this.ValidationPanel.Controls.Add(this.ValidationErrorsLabel);
+            this.ValidationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ValidationPanel.Location = new System.Drawing.Point(0, 326);
+            this.ValidationPanel.Name = "ValidationPanel";
+            this.ValidationPanel.Size = new System.Drawing.Size(493, 70);
+            this.ValidationPanel.TabIndex = 10;
+            // 
+            // ValidationErrorsLabel
+            // 
+            this.ValidationErrorsLabel.AutoSize = true;
+            this.ValidationErrorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ValidationErrorsLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.ValidationErrorsLabel.Location = new System.Drawing.Point(0, 0);
+            this.ValidationErrorsLabel.Name = "ValidationErrorsLabel";
+            this.ValidationErrorsLabel.Size = new System.Drawing.Size(0, 13);
+            this.ValidationErrorsLabel.TabIndex = 11;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 396);
-            this.Controls.Add(this.ValidationErrorsLabel);
+            this.Controls.Add(this.ValidationPanel);
             this.Controls.Add(this.RegistrationButton);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.ConfirmPasswordTextBox);
@@ -158,6 +170,8 @@
             this.Controls.Add(this.UserNameTextBox);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
+            this.ValidationPanel.ResumeLayout(false);
+            this.ValidationPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +179,6 @@
 
         #endregion
         private System.Windows.Forms.Label InfoLabel;
-        private System.Windows.Forms.Label ValidationErrorsLabel;
         private System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.Label UserNameLabel;
         private System.Windows.Forms.TextBox EmailTextBox;
@@ -175,5 +188,7 @@
         private System.Windows.Forms.Label ConfirmPasswordLabel;
         private System.Windows.Forms.TextBox ConfirmPasswordTextBox;
         private System.Windows.Forms.Button RegistrationButton;
+        private System.Windows.Forms.Panel ValidationPanel;
+        private System.Windows.Forms.Label ValidationErrorsLabel;
     }
 }
