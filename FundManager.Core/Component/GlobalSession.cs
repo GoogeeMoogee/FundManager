@@ -30,6 +30,7 @@ namespace FundManager.Core.Component
         {
             var session = CacheHelper.Instance;
             var strModel = session.Get(DesktopSessionKey) as string;
+            if (strModel == null) return null;
             var userModel = JsonConvert.DeserializeObject<UserModel>(strModel);
             return userModel;
         }

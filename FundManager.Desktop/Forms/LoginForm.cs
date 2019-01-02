@@ -4,7 +4,7 @@ using FundManager.Core.Component;
 using FundManager.Core.Model;
 using FundManager.Core.Services;
 
-namespace FundManager.Desktop
+namespace FundManager.Desktop.Forms
 {
     public partial class LoginForm : Form
     {

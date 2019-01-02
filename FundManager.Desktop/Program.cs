@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using FundManager.Desktop.Forms;
 
 namespace FundManager.Desktop
 {

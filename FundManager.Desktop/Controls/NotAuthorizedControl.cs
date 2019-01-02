@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
+using FundManager.Desktop.Forms;
 
-namespace FundManager.Desktop
+namespace FundManager.Desktop.Controls
 {
     public partial class NotAuthorizedControl : UserControl
     {

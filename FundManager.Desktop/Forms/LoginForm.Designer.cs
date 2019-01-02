@@ -1,4 +1,4 @@
-﻿namespace FundManager.Desktop
+﻿namespace FundManager.Desktop.Forms
 {
     partial class LoginForm
     {

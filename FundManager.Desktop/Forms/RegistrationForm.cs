@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FundManager.Core.Component;
 using FundManager.Core.Model;
 using FundManager.Core.Services;
 using FundManager.Desktop.Model;
 
-namespace FundManager.Desktop
+namespace FundManager.Desktop.Forms
 {
     public partial class RegistrationForm : Form
     {

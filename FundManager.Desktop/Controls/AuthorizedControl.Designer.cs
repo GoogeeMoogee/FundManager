@@ -1,4 +1,4 @@
-﻿namespace FundManager.Desktop
+﻿namespace FundManager.Desktop.Controls
 {
     partial class AuthorizedControl
     {
